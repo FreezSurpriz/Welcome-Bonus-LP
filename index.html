@@ -16,6 +16,23 @@
       background: #01061d;
     }
 
+    body:has(.wb-modal:target) {
+      overflow: hidden;
+    }
+
+    .nw-hidden-input {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      border: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
     #html-content-type-area {
       --bg-main: #0d0c39;
       --bg-secondary: #01061d;
@@ -111,6 +128,7 @@
       width: 18px;
       height: 18px;
       display: inline-flex;
+      z-index: 3;
     }
 
     #html-content-type-area .wb-offer-info-trigger img {
@@ -154,6 +172,7 @@
       flex: 0 0 calc(100% - 28px);
       padding: 36px 16px 18px;
       position: relative;
+      isolation: isolate;
       overflow: hidden;
       text-align: center;
       scroll-snap-align: start;
@@ -165,6 +184,8 @@
       top: 0;
       width: 109px;
       height: auto;
+      z-index: 0;
+      pointer-events: none;
     }
 
     #html-content-type-area .wb-offer-sub {
@@ -173,6 +194,8 @@
       font-size: 14px;
       font-weight: 400;
       line-height: 1.5;
+      position: relative;
+      z-index: 1;
     }
 
     #html-content-type-area .wb-offer-main {
@@ -182,6 +205,8 @@
       color: var(--accent-yellow);
       font-weight: 700;
       text-shadow: 0 0 3.5px #fcc7017d;
+      position: relative;
+      z-index: 1;
     }
 
     #html-content-type-area .wb-btn {
@@ -197,6 +222,8 @@
       padding: 16px 20px;
       text-decoration: none;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     #html-content-type-area .wb-mini {
@@ -462,13 +489,16 @@
         radial-gradient(160px 80px at 50% 8%, rgba(115, 80, 215, 0.35), transparent 70%),
         #03052a;
     }
-    @media (max-width: 390px) {
-      #html-content-type-area {
-        padding: 12px;
+    
+    @media (max-width: 768px) {
+      #html-content-type-area .wb-offers {
+        -webkit-overflow-scrolling: touch;
+        scroll-padding-inline: 16px;
       }
 
-      #html-content-type-area .wb-offer-main {
-        font-size: 30px;
+      #html-content-type-area .wb-offers::after {
+        content: '';
+        flex: 0 0 1px;
       }
     }
 
@@ -797,3 +827,5 @@
   </div>
 </body>
 </html>
+
+
