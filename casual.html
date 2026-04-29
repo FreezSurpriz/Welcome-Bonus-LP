@@ -1,0 +1,794 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"
+  />
+  <title>Casino Welcome Bonus</title>
+  <style>
+    #html-content-type-area {
+      --bg-main: #0d0c39;
+      --bg-secondary: #01061d;
+      --card-bg: #11104a;
+      --text-main: #ffffff;
+      --text-soft: #d8d7ee;
+      --text-muted: #9e9ea0;
+      --accent-yellow: #ffd600;
+      --gradient-primary: linear-gradient(92.36deg, #c794fe 0%, #824cbc 100%);
+      --gradient-deposit: linear-gradient(125.67deg, #e19800 11.24%, #fff86b 55.11%, #f7d14e 74.31%, #d4a041 93.16%);
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      font-family: "Poppins", Arial, sans-serif;
+      margin: 0 auto;
+      max-width: 420px;
+      min-height: 100vh;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    #html-content-type-area * {
+      box-sizing: border-box;
+    }
+
+    #html-content-type-area h1 {
+      opacity: 0;
+      height: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #html-content-type-area .wb-banner img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    #html-content-type-area .wb-banner,
+    #html-content-type-area .wb-info,
+    #html-content-type-area .wb-offers,
+    #html-content-type-area .wb-mini,
+    #html-content-type-area .wb-faq {
+      margin-top: 40px;
+    }
+
+    #html-content-type-area .wb-banner {
+      margin-top: 0;
+    }
+
+    #html-content-type-area .wb-info,
+    #html-content-type-area .wb-offer,
+    #html-content-type-area .wb-faq-item {
+      border-radius: 12px;
+      background: var(--card-bg);
+    }
+
+    #html-content-type-area .wb-info {
+      padding: 18px 16px 16px;
+      position: relative;
+      text-align: center;
+    }
+
+    #html-content-type-area .wb-info h2 {
+      margin: 0 0 10px;
+      color: var(--accent-yellow);
+      font-size: 20px;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    #html-content-type-area .wb-info p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    #html-content-type-area .wb-info .icon-info,
+    #html-content-type-area .wb-offer .icon-info {
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      object-fit: contain;
+    }
+
+    #html-content-type-area .wb-offer-info-trigger {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+    }
+
+    #html-content-type-area .wb-offer-info-trigger img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    #html-content-type-area .wb-info-trigger {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+    }
+
+    #html-content-type-area .wb-info-trigger img {
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    #html-content-type-area .wb-offers {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    #html-content-type-area .wb-offers::-webkit-scrollbar {
+      display: none;
+    }
+
+    #html-content-type-area .wb-offer {
+      flex: 0 0 calc(100% - 28px);
+      padding: 36px 16px 18px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      scroll-snap-align: start;
+    }
+
+    #html-content-type-area .wb-corner {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 109px;
+      height: auto;
+    }
+
+    #html-content-type-area .wb-offer-sub {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    #html-content-type-area .wb-offer-main {
+      margin: 8px 0 18px;
+      font-size: 32px;
+      line-height: 1.2;
+      color: var(--accent-yellow);
+      font-weight: 700;
+      text-shadow: 0 0 3.5px #fcc7017d;
+    }
+
+    #html-content-type-area .wb-btn {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 24px;
+      background: var(--gradient-deposit);
+      color: #090b33;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1;
+      padding: 16px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    #html-content-type-area .wb-mini {
+      margin: 40px 0 0;
+      border-top: 0;
+      padding-top: 20px;
+      position: relative;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    #html-content-type-area .wb-mini::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(13, 13, 13, 0.016) 0%, rgba(219, 147, 255, 0.4) 50%, rgba(13, 13, 13, 0.016) 100%);
+    }
+
+    #html-content-type-area .wb-mini a {
+      color: var(--text-main);
+      text-decoration: underline;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    #html-content-type-area .wb-faq-title {
+      margin: 0 0 14px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    #html-content-type-area .wb-faq-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    #html-content-type-area .wb-faq-item {
+      padding: 16px;
+    }
+
+    #html-content-type-area .wb-faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    #html-content-type-area .wb-faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    #html-content-type-area .wb-arrow {
+      width: 14px;
+      height: 9px;
+      display: inline-block;
+      background: url("img/Vector (1).svg") center / contain no-repeat;
+      color: transparent;
+      font-size: 0;
+      line-height: 0;
+      transform: rotate(0deg);
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    #html-content-type-area .wb-faq-item[open] .wb-arrow {
+      transform: rotate(180deg);
+      color: #ffffff;
+    }
+
+    #html-content-type-area .wb-faq-content {
+      margin-top: 10px;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    #html-content-type-area .wb-faq-content ul {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    #html-content-type-area .wb-faq-content li {
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    #html-content-type-area .wb-faq-content li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-yellow);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    #html-content-type-area .wb-modal {
+      font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    #html-content-type-area .wb-modal:target {
+      display: flex;
+    }
+
+    #html-content-type-area:has(.wb-modal:target) {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #html-content-type-area .wb-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(1, 3, 16, 0.78);
+    }
+
+    #html-content-type-area .wb-modal-dialog {
+      position: relative;
+      width: min(100%, 360px);
+      max-height: calc(100vh - 16px);
+      overflow-y: auto;
+      border-radius: 12px;
+      border: 1px solid #2e4b96;
+      background: #03052a;
+      box-shadow: 0 24px 44px rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    #html-content-type-area .wb-modal-head {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 44px;
+      border-bottom: 1px solid #2e4b96;
+      background: #03052a;
+    }
+
+    #html-content-type-area .wb-modal-head h3 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    #html-content-type-area .wb-modal-close {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #7e84b2;
+      text-decoration: none;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 300;
+    }
+
+    #html-content-type-area .wb-modal-content {
+      padding: 18px 14px 14px;
+      display: block;
+    }
+
+    #html-content-type-area .wb-modal-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    #html-content-type-area .wb-modal-row .price {
+      color: var(--accent-yellow);
+      white-space: nowrap;
+    }
+
+    #html-content-type-area .wb-modal-card {
+      margin-bottom: 16px;
+      border-radius: 12px;
+      background: #0f1049;
+      padding: 14px 14px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #html-content-type-area .wb-modal-label {
+      margin: 0;
+      font-size: 16px;
+      color: #e8e9f6;
+      line-height: 1.35;
+      font-weight: 400;
+    }
+
+    #html-content-type-area .wb-modal-value {
+      margin: 0;
+      text-align: right;
+      line-height: 1.2;
+      font-size: 16px;
+      color: #edf0ff;
+      font-weight: 700;
+    }
+
+    #html-content-type-area .wb-modal-wager {
+      margin: 3px 0 0;
+      text-align: right;
+      color: var(--accent-yellow);
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 400;
+    }
+
+    #html-content-type-area .wb-modal-value .accent {
+      color: var(--accent-yellow);
+    }
+
+    #html-content-type-area .wb-modal-subtitle {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 600;
+      color: #f2f3ff;
+    }
+
+    #html-content-type-area .wb-modal .wb-btn {
+      margin-top: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+
+    #html-content-type-area .wb-modal-dialog.wb-modal-dialog--first {
+      background:
+        radial-gradient(160px 80px at 50% 8%, rgba(115, 80, 215, 0.35), transparent 70%),
+        #03052a;
+    }
+    @media (max-width: 390px) {
+      #html-content-type-area {
+        padding: 12px;
+      }
+
+      #html-content-type-area .wb-offer-main {
+        font-size: 30px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      body {
+        margin: 0;
+        background: radial-gradient(circle at 20% 0%, #1a1f54 0%, #050a24 38%, #020514 100%);
+        padding: 36px 20px;
+      }
+
+      #html-content-type-area {
+        max-width: 960px;
+        padding: 28px;
+        border: 1px solid rgba(68, 96, 190, 0.45);
+        border-radius: 12px;
+        background: linear-gradient(180deg, #07103a 0%, #01061d 100%);
+      }
+
+      #html-content-type-area .wb-offers {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        overflow: visible;
+        padding-bottom: 0;
+      }
+
+      #html-content-type-area .wb-offer {
+        flex: initial;
+      }
+
+      #html-content-type-area .wb-faq-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #html-content-type-area .wb-modal-dialog {
+        width: min(100%, 420px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="html-content-type-area">
+    <h1>Casino Welcome Bonus</h1>
+
+    <section class="wb-banner" aria-label="Welcome banner">
+      <img src="img/Banner.png" alt="Casino Welcome Bonus 280% + 235 FS" />
+    </section>
+
+    <section class="wb-info" aria-label="How bonus works">
+      <a class="wb-info-trigger" href="#bonus-details" aria-label="Open bonus details">
+        <img class="icon-info" src="img/info.png" alt="Info" />
+      </a>
+      <h2>Start Your First Play</h2>
+      <p>Each deposit unlocks a new reward.<br />If your bonus is lost, you'll receive 50 FS.</p>
+    </section>
+
+    <section id="bonus-details" class="wb-modal" aria-label="Bonus Details">
+      <a class="wb-modal-backdrop" href="#" aria-label="Close popup"></a>
+      <div class="wb-modal-dialog">
+        <div class="wb-modal-head">
+          <h3>Bonus Details</h3>
+          <a class="wb-modal-close" href="#" aria-label="Close popup">×</a>
+        </div>
+        <div class="wb-modal-content">
+          <p class="wb-modal-row"><span>1st Deposit</span><span class="price">from £20</span></p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Bonus:</p>
+            <div>
+              <p class="wb-modal-value">150% up to £750</p>
+              <p class="wb-modal-wager">Wager: x30</p>
+            </div>
+          </div>
+
+          <p class="wb-modal-subtitle">After successful wagering</p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Total:</p>
+            <div>
+              <p class="wb-modal-value">100 FS</p>
+              <p class="wb-modal-wager">Wager: x30</p>
+            </div>
+          </div>
+
+          <p class="wb-modal-subtitle">Safety Net (If Bonus is Lost)</p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Total:</p>
+            <div>
+              <p class="wb-modal-value">50 FS</p>
+              <p class="wb-modal-wager">Wager: x1</p>
+            </div>
+          </div>
+
+          <p class="wb-modal-row"><span>2nd Deposit</span><span class="price">from £25</span></p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Bonus:</p>
+            <div>
+              <p class="wb-modal-value">85 FS</p>
+              <p class="wb-modal-wager">Wager: x35</p>
+            </div>
+          </div>
+
+          <p class="wb-modal-row"><span>3rd Deposit - Your choice</span></p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Bonus:</p>
+            <div>
+              <p class="wb-modal-value">80% up to £800 <span class="accent">or</span> 50 FS</p>
+            </div>
+          </div>
+
+          <p class="wb-modal-row"><span>4th Deposit</span><span class="price">from £20</span></p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Bonus:</p>
+            <div>
+              <p class="wb-modal-value">50% up to £1000</p>
+              <p class="wb-modal-wager">Wager: x30</p>
+            </div>
+          </div>
+
+          <a class="wb-btn" href="#">Deposit</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wb-offers" aria-label="Deposit offers">
+      <article class="wb-offer">
+        <img class="wb-corner" src="img/corner + 50 FS Safe.png" alt="+50 FS Safe" />
+        <a class="wb-offer-info-trigger" href="#bonus-details-first" aria-label="Open 1st deposit details">
+          <img class="icon-info" src="img/info.png" alt="Info" />
+        </a>
+        <p class="wb-offer-sub">1st Deposit | From £20</p>
+        <p class="wb-offer-main">150% + 100 FS</p>
+        <a class="wb-btn" href="#">Deposit</a>
+      </article>
+
+      <article class="wb-offer">
+        <a class="wb-offer-info-trigger" href="#bonus-details-second" aria-label="Open 2nd deposit details">
+          <img class="icon-info" src="img/info.png" alt="Info" />
+        </a>
+        <p class="wb-offer-sub">2nd Deposit | From £20</p>
+        <p class="wb-offer-main">85 FS</p>
+        <a class="wb-btn" href="#">Deposit</a>
+      </article>
+
+      <article class="wb-offer">
+        <a class="wb-offer-info-trigger" href="#bonus-details-third" aria-label="Open 3rd deposit details">
+          <img class="icon-info" src="img/info.png" alt="Info" />
+        </a>
+        <p class="wb-offer-sub">3rd Deposit | From £20</p>
+        <p class="wb-offer-main">80% or 50 FS</p>
+        <a class="wb-btn" href="#">Deposit</a>
+      </article>
+
+      <article class="wb-offer">
+        <a class="wb-offer-info-trigger" href="#bonus-details-fourth" aria-label="Open 4th deposit details">
+          <img class="icon-info" src="img/info.png" alt="Info" />
+        </a>
+        <p class="wb-offer-sub">4th Deposit | From £20</p>
+        <p class="wb-offer-main">50%</p>
+        <a class="wb-btn" href="#">Deposit</a>
+      </article>
+    </section>
+
+    <section id="bonus-details-first" class="wb-modal" aria-label="1st Deposit Bonus Details">
+      <a class="wb-modal-backdrop" href="#" aria-label="Close popup"></a>
+      <div class="wb-modal-dialog wb-modal-dialog--first">
+        <div class="wb-modal-head">
+          <h3>Bonus Details</h3>
+          <a class="wb-modal-close" href="#" aria-label="Close popup">×</a>
+        </div>
+        <div class="wb-modal-content">
+          <p class="wb-modal-row"><span>1st Deposit</span><span class="price">from £20</span></p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Bonus:</p>
+            <div>
+              <p class="wb-modal-value">150% up to £750</p>
+              <p class="wb-modal-wager">Wager: x30</p>
+            </div>
+          </div>
+
+          <p class="wb-modal-subtitle">After successful wagering</p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Total:</p>
+            <div>
+              <p class="wb-modal-value">100 FS</p>
+              <p class="wb-modal-wager">Wager: x30</p>
+            </div>
+          </div>
+
+          <p class="wb-modal-subtitle">Safety Net (If Bonus is Lost)</p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Total:</p>
+            <div>
+              <p class="wb-modal-value">50 FS</p>
+              <p class="wb-modal-wager">Wager: x1</p>
+            </div>
+          </div>
+
+          <a class="wb-btn" href="#">Deposit</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="bonus-details-second" class="wb-modal" aria-label="2nd Deposit Bonus Details">
+      <a class="wb-modal-backdrop" href="#" aria-label="Close popup"></a>
+      <div class="wb-modal-dialog">
+        <div class="wb-modal-head">
+          <h3>Bonus Details</h3>
+          <a class="wb-modal-close" href="#" aria-label="Close popup">×</a>
+        </div>
+        <div class="wb-modal-content">
+          <p class="wb-modal-row"><span>2nd Deposit</span><span class="price">from £20</span></p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Bonus:</p>
+            <div>
+              <p class="wb-modal-value">85 FS</p>
+              <p class="wb-modal-wager">Wager: x35</p>
+            </div>
+          </div>
+          <a class="wb-btn" href="#">Deposit</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="bonus-details-third" class="wb-modal" aria-label="3rd Deposit Bonus Details">
+      <a class="wb-modal-backdrop" href="#" aria-label="Close popup"></a>
+      <div class="wb-modal-dialog">
+        <div class="wb-modal-head">
+          <h3>Bonus Details</h3>
+          <a class="wb-modal-close" href="#" aria-label="Close popup">×</a>
+        </div>
+        <div class="wb-modal-content">
+          <p class="wb-modal-row"><span>3rd Deposit - Your choice</span></p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Bonus:</p>
+            <div>
+              <p class="wb-modal-value">80% up to £800 <span class="accent">or</span> 50 FS</p>
+            </div>
+          </div>
+          <a class="wb-btn" href="#">Deposit</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="bonus-details-fourth" class="wb-modal" aria-label="4th Deposit Bonus Details">
+      <a class="wb-modal-backdrop" href="#" aria-label="Close popup"></a>
+      <div class="wb-modal-dialog">
+        <div class="wb-modal-head">
+          <h3>Bonus Details</h3>
+          <a class="wb-modal-close" href="#" aria-label="Close popup">×</a>
+        </div>
+        <div class="wb-modal-content">
+          <p class="wb-modal-row"><span>4th Deposit</span><span class="price">from £20</span></p>
+          <div class="wb-modal-card">
+            <p class="wb-modal-label">Bonus:</p>
+            <div>
+              <p class="wb-modal-value">50% up to £1000</p>
+              <p class="wb-modal-wager">Wager: x30</p>
+            </div>
+          </div>
+          <a class="wb-btn" href="#">Deposit</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wb-mini" aria-label="Terms and conditions link">
+      Curious for more? Check full <a href="#">T&amp;C</a>
+    </section>
+
+    <section class="wb-faq" aria-label="FAQ">
+      <h2 class="wb-faq-title">FAQ</h2>
+      <div class="wb-faq-list">
+        <details class="wb-faq-item" open>
+          <summary>
+            How do I activate the Welcome Bonus?
+            <span class="wb-arrow">⌃</span>
+          </summary>
+          <div class="wb-faq-content">
+            <ul>
+              <li>Register your account</li>
+              <li>Make your first deposit</li>
+              <li>Your bonus is activated automatically</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="wb-faq-item">
+          <summary>
+            What happens after I complete the wagering?
+            <span class="wb-arrow">⌃</span>
+          </summary>
+          <div class="wb-faq-content">After wagering is completed, bonus funds and winnings become withdrawable according to terms.</div>
+        </details>
+
+        <details class="wb-faq-item">
+          <summary>
+            What is the 50 Free Spins Bonus Protection reward?
+            <span class="wb-arrow">⌃</span>
+          </summary>
+          <div class="wb-faq-content">If a bonus is lost under qualifying conditions, 50 Free Spins can be credited as protection reward.</div>
+        </details>
+
+        <details class="wb-faq-item">
+          <summary>
+            How are Free Spins released?
+            <span class="wb-arrow">⌃</span>
+          </summary>
+          <div class="wb-faq-content">Free Spins are credited in batches based on deposit and promotion stage.</div>
+        </details>
+
+        <details class="wb-faq-item">
+          <summary>
+            What deposit methods are available?
+            <span class="wb-arrow">⌃</span>
+          </summary>
+          <div class="wb-faq-content">Card payments, e-wallets, and other methods supported by your region and casino policy.</div>
+        </details>
+
+        <details class="wb-faq-item">
+          <summary>
+            How long is the Welcome Bonus available?
+            <span class="wb-arrow">⌃</span>
+          </summary>
+          <div class="wb-faq-content">The offer availability is limited and shown in your account promotions section.</div>
+        </details>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
